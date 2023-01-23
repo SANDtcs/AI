@@ -1,0 +1,14 @@
+graph = [[1, 2], [2, 4], [1, 4], [3, 4], [3, 5], [2, 6], [3, 6], [4, 5], [5, 6]]
+
+source = 1
+dest = 6
+path = [source]
+
+while source != dest:
+    for edge in graph:
+        if edge[0] == source:
+            source = edge[1]
+            break
+    path.append(source)
+
+print(path)
