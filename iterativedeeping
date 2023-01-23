@@ -1,0 +1,31 @@
+graph = [[1, 2], [2, 4], [1, 4], [3, 4], [3, 5], [2, 6], [3, 6], [4, 5], [5, 6]]
+i = 1
+m = 3
+
+while i <= m:
+    source = 1
+    dest = 6
+    path = [source]
+    stack = [[source, 0]]
+    print("i =", i)
+
+    while len(stack) > 0 and stack[-1][0] != dest:
+        print(stack)
+
+        temp = stack[-1]
+        del stack[-1]
+
+        if temp[1] >= i:
+            continue
+
+        count = 0
+        for edge in graph:
+            if edge[0] == temp[0]:
+                count += 1
+                stack.append((edge[1], temp[1] + 1))
+                path.append(edge[1])
+        if count == 0:
+            del path[-1]
+        
+    print(path)
+    i += 1
