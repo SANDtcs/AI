@@ -22,6 +22,7 @@ def find_throttle_control(sd,acc):
             b=speed_diff[i][1]
             c=speed_diff[i][2]
             deg=max(min((sd-a)/(b-a),(c-sd)/(c-b)),0)
+            #max(min((sd-a)/(b-a),1,(d-sd)/(d-c)),0)
             sd_mem_deg[i]=deg
     print("speed difference membership degree : ",sd_mem_deg,sep='\n')     
     
