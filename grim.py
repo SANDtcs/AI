@@ -1,8 +1,13 @@
-import matplotlib.pyplot as plt
-
-
 def triangular_member(x,points):
   val = max(min((x-points[0])/(points[1]-points[0]),(points[2]-x)/(points[2]-points[1])),0)
+  #plt.plot(points,[0,1,0])
+  #plt.scatter(x,val)
+  return val
+
+
+
+def trapezoidal_member(x,points):
+  val = max(min((x-points[0])/(points[1]-points[0]),1,(points[3]-x)/(points[3]-points[2])),0)
   #plt.plot(points,[0,1,0])
   #plt.scatter(x,val)
   return val
